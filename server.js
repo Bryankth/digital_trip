@@ -169,7 +169,7 @@ var calcMaxCoins = function (time) {
 
     maxPath = (speedStart + acceleration * Math.sqrt(time * 60)) * time;
 
-    maxCoins = Math.floor(maxPath / (t + dt * (n - 1)) * n)/10;
+    maxCoins = Math.round((maxPath / (t + dt * (n - 1)) * n)/100);
     console.log('time:' + time, 'maxCoins:' + maxCoins, 'maxPath:' + maxPath);
     return maxCoins;
 };
