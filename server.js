@@ -106,12 +106,13 @@ var checkClient = function (clients, currentClient) {
         checkup = null;
 
     clients.forEach(function(client, i) {
+
         if (client.clientIp === currentClient.clientIp) {
             IPcounter++;
             if (client.paymentRequest) {
                 IPpaymentsCounter += client.paymentRequest; 
-                if (currentClient.timeEnd && currentClient.cientId !== client.cientId) {
-                    Math.min(IPtimeCounter, currentClient.timeEnd - client.timeEnd);
+                if (currentClient.timeEnd) { // && currentClient.cientId !== client.cientId) {
+                    IPtimeCounter = Math.min(IPtimeCounter, currentClient.timeEnd - client.timeEnd);
                 }
             }
         }
@@ -171,7 +172,7 @@ var calcMaxCoins = function (time) {
 
     maxCoins = Math.round((maxPath / (t + dt * (n - 1)) * n)/100);
     console.log('time:' + time, 'maxCoins:' + maxCoins, 'maxPath:' + maxPath);
-    return maxCoins;
+    return Math.min(maxCoins, 25);
 };
 // var checkUID = function (uid) {};
 // var checkIp = function (ip) {};
