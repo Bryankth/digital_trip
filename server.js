@@ -111,7 +111,7 @@ var checkClient = function (clients, currentClient) {
             IPcounter++;
             if (client.paymentRequest) {
                 IPpaymentsCounter += client.paymentRequest; 
-                if (currentClient.timeEnd) { // && currentClient.cientId !== client.cientId) {
+                if (currentClient.timeEnd && currentClient.clientId !== client.clientId) {
                     IPtimeCounter = Math.min(IPtimeCounter, currentClient.timeEnd - client.timeEnd);
                 }
             }
