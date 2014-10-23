@@ -4471,7 +4471,7 @@ window.DT = (function (window, document, undefined) {
         if (distanceBerweenCenters < 0.9) {
             this.removeFromScene();
             if (!DT.game.wasOver) {
-                DT.$document.trigger('changeScore', {delta: 0.01});
+                DT.$document.trigger('changeScore', {delta: 0.05});
             }
             DT.$document.trigger('blink', {color: 0xcfb53b, frames: 60});
         }

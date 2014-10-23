@@ -170,9 +170,9 @@ var calcMaxCoins = function (time) {
 
     maxPath = (speedStart + acceleration * Math.sqrt(time * 60)) * time;
 
-    maxCoins = Math.round((maxPath / (t + dt * (n - 1)) * n)/100);
+    maxCoins = Math.round((maxPath / (t + dt * (n - 1)) * n)*0.05);
     console.log('time:' + time, 'maxCoins:' + maxCoins, 'maxPath:' + maxPath);
-    return Math.min(maxCoins, 25);
+    return Math.min(maxCoins, 50);
 };
 // var checkUID = function (uid) {};
 // var checkIp = function (ip) {};
