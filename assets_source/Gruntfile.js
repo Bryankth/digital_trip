@@ -11,8 +11,8 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 files: {
-                    '../assets/css/game.css': 'scss/game.scss',
-                    '../assets/css/mobile.css': 'scss/mobile.scss'
+                    '../css/game.css': 'scss/game.scss',
+                    '../css/mobile.css': 'scss/mobile.scss'
                 }
             },
             options: {
@@ -28,11 +28,11 @@ module.exports = function(grunt) {
                 tasks: ['newer:sass'],
             },
             js: {
-                files: ['js/*.js', 'js/*/*.js', '../assets/js/tests/tests.js'],
+                files: ['js/*.js', 'js/*/*.js', '../js/tests/tests.js'],
                 tasks: ['process'],
             },
             html: {
-                files: '../assets/index.html',
+                files: '../index.html',
             },
             // config: {
             //     files: ['package.json', 'Gruntfile.js'],
@@ -46,7 +46,7 @@ module.exports = function(grunt) {
             target: {
                 files: {
                     '../assets_source/js/DT.js': [
-                    // '../assets/js/DT.js': [
+                    // '../js/DT.js': [
                         // QR code
                         'js/vendor/jquery.qrcode.min.js',
                         // Particle system
@@ -90,9 +90,9 @@ module.exports = function(grunt) {
                     banner: '/* Created by deemidroll | deemidroll@gmail.com | 2014 */',
                 },
                 files: {
-                    '../assets/js/DT.min.js': ['../assets_source/js/DT.js'],
-                    '../assets/js/myYepnope.min.js': ['js/myYepnope.js'],
-                    '../assets/js/mobile.min.js': ['js/mobile.js'],
+                    '../js/DT.min.js': ['../assets_source/js/DT.js'],
+                    '../js/myYepnope.min.js': ['js/myYepnope.js'],
+                    '../js/mobile.min.js': ['js/mobile.js'],
                 }
             }
         },
