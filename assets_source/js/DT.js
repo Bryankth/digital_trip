@@ -4471,7 +4471,7 @@ window.DT = (function (window, document, undefined) {
         if (distanceBerweenCenters < 0.9) {
             this.removeFromScene();
             if (!DT.game.wasOver) {
-                DT.$document.trigger('changeScore', {delta: 0.02});
+                DT.$document.trigger('changeScore', {delta: 1});
             }
             DT.$document.trigger('blink', {color: 0xcfb53b, frames: 60});
         }
@@ -5346,17 +5346,17 @@ window.DT = (function (window, document, undefined) {
         });
     };
     DT.sendSocketMessage = function (options) {
-        var data = {
-            'type': options.type,
-            'time': options.time,
-            'dogecoinId': options.dogecoinId,
-            'gameCode': DT.initSocket.socket.gameCode,
-            'sessionid': DT.initSocket.socket.socket.sessionid,
-            'coinsCollect': Math.round(DT.player.currentScore)
-        };
-        if (DT.initSocket.socket) {
-            DT.initSocket.socket.emit('message', data);
-        }
+        // var data = {
+        //     'type': options.type,
+        //     'time': options.time,
+        //     'dogecoinId': options.dogecoinId,
+        //     'gameCode': DT.initSocket.socket.gameCode,
+        //     'sessionid': DT.initSocket.socket.socket.sessionid,
+        //     'coinsCollect': Math.round(DT.player.currentScore)
+        // };
+        // if (DT.initSocket.socket) {
+        //     DT.initSocket.socket.emit('message', data);
+        // }
     };
 
     DT.$document.on('startGame', function (e, data) {
@@ -5681,7 +5681,7 @@ window.DT = (function (window, document, undefined) {
     DT.handlers.wowClick = function () {
         var dogecoinId = DT.$dogecoin.val();
         if (dogecoinId === '') {
-            DT.$gameovermessage.html('type your dogecoin id');
+            DT.$gameovermessage.html('type your dogecoin address');
         } else {
             DT.$gameovermessage.html('checking...');
             DT.$document.trigger('checkup', {dogecoinId: dogecoinId});
@@ -5747,7 +5747,7 @@ window.DT = (function (window, document, undefined) {
         errorsLen = errors.length;
 
     DT.runApp = function () {
-        DT.initSocket();
+        // DT.initSocket();
         if (!document.hasFocus()) {
             DT.setVolume(0);
         } else {
@@ -5955,4 +5955,5 @@ window.DT = (function (window, document, undefined) {
 
     return DT;
 }(this, this.document));
+
 //# sourceMappingURL=DT.js.map

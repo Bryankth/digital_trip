@@ -62,7 +62,7 @@ $(function () {
             load: [
                 "js/vendor/three.min.js",
                 "js/DT.min.js",
-                "../socket.io/socket.io.js"
+                // "../socket.io/socket.io.js"
             ],
             callback: {}
         }]);
